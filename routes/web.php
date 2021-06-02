@@ -44,3 +44,9 @@ Route::get('/flush', function () {
 
     return $laracart->flush();
 });
+
+Route::get('/findByUuid/{uuid}', function (string $uuid) {
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    return $laracart->findByUuid($uuid);
+});
