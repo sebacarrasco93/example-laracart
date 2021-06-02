@@ -38,3 +38,9 @@ Route::get('/get', function () {
 
     return $laracart->get();
 });
+
+Route::get('/flush', function () {
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    return $laracart->flush();
+});
