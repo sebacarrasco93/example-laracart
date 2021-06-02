@@ -14,5 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    dd($laracart);
+});
+
+Route::get('/add/{times?}', function ($times = 1) {
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    $itemOne = [
+        'uuid' => '111AAA',
+        'name' => "Lemon Waffle by SoloWaffles",
+        'price' => '8.5',
+    ];
+
+    for ($i=1; $i<=$times; $i++) {
+        $laracart->add($itemOne);
+    }
+});
+
+Route::get('/get', function () {
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    return $laracart->get();
 });
