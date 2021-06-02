@@ -71,6 +71,12 @@ Route::get('/update/{uuid?}', function (string $uuid = '111AAA') {
         'uuid' => '333CCC',
         'name' => "Another Waffle by SoloWaffles",
         'price' => '11.99',
+        'anotherFields' => [
+            'extra-data' => [
+                'Without sausage',
+            ],
+            'special_note' => 'Thank you',
+        ],
     ];
 
     $laracart->update($uuid, $newItem);
