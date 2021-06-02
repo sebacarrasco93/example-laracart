@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bdc5de41c6c5f193b3d851c6b4aa86d",
+    "content-hash": "f498d25fa31e13c8f0d62519921fec40",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2314,6 +2314,43 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "sebacarrasco93/laracart",
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "../../sebacarrasco93/laracart",
+                "reference": "6ca0f95725b77e29d1ae52d489ac16e3f38ffba1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.18",
+                "pestphp/pest": "^1.3"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "SebaCarrasco93\\LaraCart\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "SebaCarrasco93\\LaraCart\\Tests\\": "tests"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Seba Carrasco Poblete",
+                    "email": "sebacarrasco93@gmail.com"
+                }
+            ],
+            "description": "A simple backend-managed Cart for Laravel",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7334,7 +7371,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "sebacarrasco93/laracart": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
