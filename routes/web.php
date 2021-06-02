@@ -52,14 +52,26 @@ Route::get('/flush', function () {
     return $laracart->flush();
 });
 
-Route::get('/findByUuid/{uuid}', function (string $uuid) {
+Route::get('/findByUuid/{uuid?}', function (string $uuid = '111AAA') {
     $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
 
     return $laracart->findByUuid($uuid);
 });
 
-Route::get('/delete/{uuid}', function (string $uuid) {
+Route::get('/delete/{uuid?}', function (string $uuid = '111AAA') {
     $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
 
     $laracart->delete($uuid);
+});
+
+Route::get('/update/{uuid?}', function (string $uuid = '111AAA') {
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    $newItem = [
+        'uuid' => '333CCC',
+        'name' => "Another Waffle by SoloWaffles",
+        'price' => '11.99',
+    ];
+
+    $laracart->update($uuid, $newItem);
 });
