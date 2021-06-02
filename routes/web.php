@@ -28,8 +28,15 @@ Route::get('/add/{times?}', function ($times = 1) {
         'price' => '8.5',
     ];
 
+    $itemTwo = [
+        'uuid' => '222BBB',
+        'name' => "Super Waffle by SoloWaffles",
+        'price' => '5.5',
+    ];
+
     for ($i=1; $i<=$times; $i++) {
         $laracart->add($itemOne);
+        $laracart->add($itemTwo);
     }
 });
 
@@ -49,4 +56,10 @@ Route::get('/findByUuid/{uuid}', function (string $uuid) {
     $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
 
     return $laracart->findByUuid($uuid);
+});
+
+Route::get('/delete/{uuid}', function (string $uuid) {
+    $laracart = new \SebaCarrasco93\LaraCart\LaraCart();
+
+    $laracart->delete($uuid);
 });
